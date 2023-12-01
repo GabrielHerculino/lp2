@@ -1,4 +1,3 @@
-import java.util.ArrayList;
 import java.util.Scanner;
 import jogoyahtzee.*;
 
@@ -66,10 +65,10 @@ public class Principal {
 
             //informa as categorias do jogo e mostra de novo os dados rolados
             if(jogadores.getNomeJogadorRodada() == jogadores.getNomeJogador1()){
-                jogadores.entradaCategoriaEscolhidaJogador1(categoria.getCategoriaEscolhida(), rolarDado.getDados());
+                jogadores.entradaCategoriaEscolhidaJogador1(categoria.getCategoriaEscolhida());
             }
             if(jogadores.getNomeJogadorRodada() == jogadores.getNomeJogador2()){
-                jogadores.entradaCategoriaEscolhidaJogador2(categoria.getCategoriaEscolhida(), rolarDado.getDados());
+                jogadores.entradaCategoriaEscolhidaJogador2(categoria.getCategoriaEscolhida());
             }
             categoria.menuDeCategorias();
             System.out.println("\nDados: " + rolarDado.getDados() + "\n");
@@ -82,24 +81,23 @@ public class Principal {
                 if(jogadores.getNomeJogadorRodada() == jogadores.getNomeJogador1()){
                     boolean verifica = categoria.contemCategoriaJogador1(categoria.getCategoriaEscolhida());
                     if (!verifica) {
-                        jogadores.entradaCategoriaEscolhidaJogador1(categoria.getCategoriaEscolhida(), rolarDado.getDados());
+                        jogadores.entradaCategoriaEscolhidaJogador1(categoria.getCategoriaEscolhida());
                         //faz a contagem dos pontos baseado na Classe Categorias
                         pontuacao.setPontuacaoRodada(categoria.pontosObtidos(categoria.getCategoriaEscolhida(), rolarDado.getDados()));
                         System.out.println("Pontuacao na rodada: " + pontuacao.getPontuacaoRodada());
                         //faz a soma dapontuação da rodada com a posição total
                         jogadores.setPontuacaoTotalJogador1(pontuacao.getPontuacaoRodada());
-                        //jogadores.entradaCategoriaEscolhidaJogador1(categoria.getCategoriaEscolhida(), rolarDado.getDados());
 
                     } else {
                         System.out.println("Categoria já escolhida, escolha novamente");
                     }
-                    jogadores.entradaCategoriaEscolhidaJogador1(categoria.getCategoriaEscolhida(), rolarDado.getDados());
+                    jogadores.entradaCategoriaEscolhidaJogador1(categoria.getCategoriaEscolhida());
                     jogadores.salvarDicionarioNoArquivoJogador1();
                 }
                 if(jogadores.getNomeJogadorRodada() == jogadores.getNomeJogador2()){
                     boolean verifica = categoria.contemCategoriaJogador2(categoria.getCategoriaEscolhida());
                     if (!verifica) {
-                        jogadores.entradaCategoriaEscolhidaJogador2(categoria.getCategoriaEscolhida(), rolarDado.getDados());
+                        jogadores.entradaCategoriaEscolhidaJogador2(categoria.getCategoriaEscolhida());
                         //faz a contagem dos pontos baseado na Classe Categorias
                         pontuacao.setPontuacaoRodada(categoria.pontosObtidos(categoria.getCategoriaEscolhida(), rolarDado.getDados()));
                         System.out.println("Pontuacao na rodada: " + pontuacao.getPontuacaoRodada());
@@ -117,6 +115,10 @@ public class Principal {
         }
 
         //ao fim do jogo a pontuação total é mostrada
-        System.out.println("Pontuacao total: " + pontuacao.getPontuacaoTotal());
+        System.out.println("Jogador: " + jogadores.getNomeJogador1());
+        System.out.println("Pontuação total: " + jogadores.getPontuacaoTotalJogador1());
+        System.out.println();
+        System.out.println("Jogador: " + jogadores.getNomeJogador2());
+        System.out.println("Pontuação total: " + jogadores.getPontuacaoTotalJogador2());
     }
 }

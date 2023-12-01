@@ -16,7 +16,4 @@ public class Pontuacao {
 
         return pontuacaoTotal;
     }
-    public void setPontuacaoTotal() {
-        this.pontuacaoTotal += pontuacaoRodada;
-    }
 }

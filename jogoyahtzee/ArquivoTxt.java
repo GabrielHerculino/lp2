@@ -12,7 +12,7 @@ public class ArquivoTxt {
     Jogadores jogadores = new Jogadores();
 
     // Escreve as informações em um arquivo
-    public void escreverTxtJogador1(String nomeJogador1, int pontuacaoTotalJogador1, Dictionary<Integer, ArrayList> categoriasDefinidas) {
+    public void escreverTxtJogador1(String nomeJogador1, int pontuacaoTotalJogador1, ArrayList<Integer> categoriasDefinidas) {
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(nomeJogador1 + ".txt"))) {
             // Escreva as informações do jogador no arquivo
             writer.write(String.valueOf(pontuacaoTotalJogador1));
@@ -26,7 +26,7 @@ public class ArquivoTxt {
     }
 
     // Lê as informações de um arquivo
-    public void lerTxtJogador1(String nomeJogador1, int pontuacaoTotalJogador1, Dictionary<Integer, ArrayList> categoriaEscolhidaJogador1) {
+    public void lerTxtJogador1(String nomeJogador1, int pontuacaoTotalJogador1, ArrayList<Integer> dicionarioJogador1) {
         try {
             File arquivo = new File(nomeJogador1+ ".txt");
             arquivo.createNewFile();
@@ -36,7 +36,6 @@ public class ArquivoTxt {
 
             while (scanner.hasNextLine()) {
                 String linha = scanner.nextLine();
-
                 jogadores.setPontuacaoTotalJogador1(Integer.parseInt(linha));
             }
 
@@ -49,7 +48,7 @@ public class ArquivoTxt {
         }
     }
 
-    public void escreverTxtJogador2(String nomeJogador2, int pontuacaoTotalJogador2, Dictionary<Integer, ArrayList> categoriasDefinidas) {
+    public void escreverTxtJogador2(String nomeJogador2, int pontuacaoTotalJogador2, ArrayList<Integer> categoriasDefinidas) {
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(nomeJogador2 + ".txt"))) {
             // Escreva as informações do jogador no arquivo
             writer.write(String.valueOf(pontuacaoTotalJogador2));
@@ -64,7 +63,7 @@ public class ArquivoTxt {
 
 
     // Lê as informações de um arquivo
-    public void lerTxtJogador2(String nomeJogador2, int pontuacaoTotalJogador2, Dictionary<Integer, ArrayList> categoriaEscolhidaJogador2) {
+    public void lerTxtJogador2(String nomeJogador2, int pontuacaoTotalJogador2, ArrayList<Integer> dicionarioJogador2) {
         try {
             File arquivo = new File(nomeJogador2+ ".txt");
             arquivo.createNewFile();
@@ -74,7 +73,6 @@ public class ArquivoTxt {
 
             while (scanner.hasNextLine()) {
                 String linha = scanner.nextLine();
-
                 jogadores.setPontuacaoTotalJogador2(Integer.parseInt(linha));
             }
 

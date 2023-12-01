@@ -5,14 +5,13 @@ import java.util.Dictionary;
 import java.util.Hashtable;
 
 public class Jogadores {
-    //Categorias categorias = new Categorias();
     private String nomeJogadorRodada;
     private String nomeJogador1;
     private String nomeJogador2;
     private int pontuacaoTotalJogador1;
     private int pontuacaoTotalJogador2;
-    private Dictionary<Integer, ArrayList> categoriaEscolhidaJogador1 = new Hashtable<>();
-    private Dictionary<Integer, ArrayList> categoriaEscolhidaJogador2 = new Hashtable<>();
+    private ArrayList<Integer> categoriaEscolhidaJogador1 = new ArrayList<>();
+    private ArrayList<Integer> categoriaEscolhidaJogador2 = new ArrayList<>();
 
     public Jogadores(String nomeJogador1, int pontuacaoTotalJogador1, String nomeJogador2, int pontuacaoTotalJogador2) {
         this.nomeJogador1 = nomeJogador1;
@@ -28,11 +27,11 @@ public class Jogadores {
         this.pontuacaoTotalJogador2 = 0;
     }
 
-    public void entradaCategoriaEscolhidaJogador1(int categoriaEscolhida, ArrayList<Integer> dados){
-        categoriaEscolhidaJogador1.put(categoriaEscolhida,dados);
+    public void entradaCategoriaEscolhidaJogador1(int categoriaEscolhida){
+        categoriaEscolhidaJogador1.add(categoriaEscolhida);
     }
-    public void entradaCategoriaEscolhidaJogador2(int categoriaEscolhida, ArrayList<Integer> dados){
-        categoriaEscolhidaJogador2.put(categoriaEscolhida,dados);
+    public void entradaCategoriaEscolhidaJogador2(int categoriaEscolhida){
+        categoriaEscolhidaJogador2.add(categoriaEscolhida);
     }
 
     public String getNomeJogador1() {
@@ -67,11 +66,11 @@ public class Jogadores {
         this.pontuacaoTotalJogador2 += pontuacaoTotalJogador2;
     }
 
-    public Dictionary<Integer, ArrayList> getCategoriaEscolhidaJogador1() {
+    public ArrayList<Integer> getCategoriaEscolhidaJogador1() {
         return categoriaEscolhidaJogador1;
     }
 
-    public Dictionary<Integer, ArrayList> getCategoriaEscolhidaJogador2() {
+    public ArrayList<Integer> getCategoriaEscolhidaJogador2() {
         return categoriaEscolhidaJogador2;
     }
 
@@ -98,7 +97,6 @@ public class Jogadores {
 
     public void carregarDicionarioDoArquivoJogador2() {
         ArquivoTxt arquivo = new ArquivoTxt();
-        //entradaCategoriaEscolhidaJogador2(arquivo.lerTxtJogador2());
         arquivo.lerTxtJogador2(getNomeJogador2(), getPontuacaoTotalJogador2(),getCategoriaEscolhidaJogador2());
     }
 

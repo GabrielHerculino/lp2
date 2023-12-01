@@ -4,11 +4,6 @@ import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
 
-//bibliotecas para o dicionario
-import java.util.Dictionary;
-import java.util.Hashtable;
-import java.util.Enumeration;
-
 public class Categorias{
     Jogadores jogadores = new Jogadores();
     private int categoriaEscolhida;
@@ -59,7 +54,7 @@ public class Categorias{
                     }
                 }
                 break;
-            case 8: //verificar
+            case 8:
                 Set<Integer> uniqueValues1 = new HashSet<>(dados);
                 for (int value : uniqueValues1) {
                     if (dados.stream().filter(d -> d == value).count() >= 4) {
@@ -108,7 +103,7 @@ public class Categorias{
                 }
                 break;
 
-            //suma todos os dados
+            //soma todos os dados
             case 13:
                 return dados.stream().mapToInt(Integer::intValue).sum();
         }
@@ -116,22 +111,21 @@ public class Categorias{
     }
 
     //verifica se a categorai já foi escolhida antes
-    public boolean contemCategoriaJogador1(int categoriaEscolhida){
-       Enumeration<Integer> keys = jogadores.getCategoriaEscolhidaJogador1().keys();
-       while (keys.hasMoreElements()){
-           if(keys.nextElement().equals(categoriaEscolhida)){
-               return true;
-           }
-       }
-       return false;
-    }
-    public boolean contemCategoriaJogador2(int categoriaEscolhida){
-        Enumeration<Integer> keys = jogadores.getCategoriaEscolhidaJogador2() .keys();
-        while (keys.hasMoreElements()){
-            if(keys.nextElement().equals(categoriaEscolhida)){
+    public boolean contemCategoriaJogador1(int categoriaEscolhida) {
+        for (Integer categoria : jogadores.getCategoriaEscolhidaJogador1()) {
+            if (categoria.equals(categoriaEscolhida)) {
                 return true;
             }
         }
+        return false;
+    }
+    public boolean contemCategoriaJogador2(int categoriaEscolhida){
+        for (Integer categoria : jogadores.getCategoriaEscolhidaJogador2()) {
+            if (categoria.equals(categoriaEscolhida)) {
+                return true;
+            }
+        }
+
         return false;
     }
 }
