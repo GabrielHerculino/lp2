@@ -66,10 +66,10 @@ public class Principal {
 
             //informa as categorias do jogo e mostra de novo os dados rolados
             if(jogadores.getNomeJogadorRodada() == jogadores.getNomeJogador1()){
-                jogadores.entradaDicionarioJogador1(categoria.getCategoriaEscolhida(), rolarDado.getDados());
+                jogadores.entradaCategoriaEscolhidaJogador1(categoria.getCategoriaEscolhida(), rolarDado.getDados());
             }
             if(jogadores.getNomeJogadorRodada() == jogadores.getNomeJogador2()){
-                jogadores.entradaDicionarioJogador2(categoria.getCategoriaEscolhida(), rolarDado.getDados());
+                jogadores.entradaCategoriaEscolhidaJogador2(categoria.getCategoriaEscolhida(), rolarDado.getDados());
             }
             categoria.menuDeCategorias();
             System.out.println("\nDados: " + rolarDado.getDados() + "\n");
@@ -82,29 +82,29 @@ public class Principal {
                 if(jogadores.getNomeJogadorRodada() == jogadores.getNomeJogador1()){
                     boolean verifica = categoria.contemCategoriaJogador1(categoria.getCategoriaEscolhida());
                     if (!verifica) {
-                        jogadores.entradaDicionarioJogador1(categoria.getCategoriaEscolhida(), rolarDado.getDados());
+                        jogadores.entradaCategoriaEscolhidaJogador1(categoria.getCategoriaEscolhida(), rolarDado.getDados());
                         //faz a contagem dos pontos baseado na Classe Categorias
                         pontuacao.setPontuacaoRodada(categoria.pontosObtidos(categoria.getCategoriaEscolhida(), rolarDado.getDados()));
                         System.out.println("Pontuacao na rodada: " + pontuacao.getPontuacaoRodada());
                         //faz a soma dapontuação da rodada com a posição total
-                        jogadores.setNumeroInteiroJogador1(pontuacao.getPontuacaoRodada());
-                        //jogadores.entradaDicionarioJogador1(categoria.getCategoriaEscolhida(), rolarDado.getDados());
+                        jogadores.setPontuacaoTotalJogador1(pontuacao.getPontuacaoRodada());
+                        //jogadores.entradaCategoriaEscolhidaJogador1(categoria.getCategoriaEscolhida(), rolarDado.getDados());
 
                     } else {
                         System.out.println("Categoria já escolhida, escolha novamente");
                     }
-                    jogadores.entradaDicionarioJogador1(categoria.getCategoriaEscolhida(), rolarDado.getDados());
+                    jogadores.entradaCategoriaEscolhidaJogador1(categoria.getCategoriaEscolhida(), rolarDado.getDados());
                     jogadores.salvarDicionarioNoArquivoJogador1();
                 }
                 if(jogadores.getNomeJogadorRodada() == jogadores.getNomeJogador2()){
                     boolean verifica = categoria.contemCategoriaJogador2(categoria.getCategoriaEscolhida());
                     if (!verifica) {
-                        jogadores.entradaDicionarioJogador2(categoria.getCategoriaEscolhida(), rolarDado.getDados());
+                        jogadores.entradaCategoriaEscolhidaJogador2(categoria.getCategoriaEscolhida(), rolarDado.getDados());
                         //faz a contagem dos pontos baseado na Classe Categorias
                         pontuacao.setPontuacaoRodada(categoria.pontosObtidos(categoria.getCategoriaEscolhida(), rolarDado.getDados()));
                         System.out.println("Pontuacao na rodada: " + pontuacao.getPontuacaoRodada());
                         //faz a soma dapontuação da rodada com a posição total
-                        jogadores.setNumeroInteiroJogador2(pontuacao.getPontuacaoRodada());
+                        jogadores.setPontuacaoTotalJogador2(pontuacao.getPontuacaoRodada());
 
                     } else {
                         System.out.println("Categoria já escolhida, escolha novamente");

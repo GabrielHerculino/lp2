@@ -117,7 +117,7 @@ public class Categorias{
 
     //verifica se a categorai já foi escolhida antes
     public boolean contemCategoriaJogador1(int categoriaEscolhida){
-       Enumeration<Integer> keys = jogadores.getDicionarioJogador1().keys();
+       Enumeration<Integer> keys = jogadores.getCategoriaEscolhidaJogador1().keys();
        while (keys.hasMoreElements()){
            if(keys.nextElement().equals(categoriaEscolhida)){
                return true;
@@ -126,7 +126,7 @@ public class Categorias{
        return false;
     }
     public boolean contemCategoriaJogador2(int categoriaEscolhida){
-        Enumeration<Integer> keys = jogadores.getDicionarioJogador2() .keys();
+        Enumeration<Integer> keys = jogadores.getCategoriaEscolhidaJogador2() .keys();
         while (keys.hasMoreElements()){
             if(keys.nextElement().equals(categoriaEscolhida)){
                 return true;

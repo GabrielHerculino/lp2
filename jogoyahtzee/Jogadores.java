@@ -9,30 +9,30 @@ public class Jogadores {
     private String nomeJogadorRodada;
     private String nomeJogador1;
     private String nomeJogador2;
-    private int numeroInteiroJogador1;
-    private int numeroInteiroJogador2;
-    private Dictionary<Integer, ArrayList> dicionarioJogador1 = new Hashtable<>();
-    private Dictionary<Integer, ArrayList> dicionarioJogador2 = new Hashtable<>();
+    private int pontuacaoTotalJogador1;
+    private int pontuacaoTotalJogador2;
+    private Dictionary<Integer, ArrayList> categoriaEscolhidaJogador1 = new Hashtable<>();
+    private Dictionary<Integer, ArrayList> categoriaEscolhidaJogador2 = new Hashtable<>();
 
-    public Jogadores(String nomeJogador1, int numeroInteiroJogador1, String nomeJogador2, int numeroInteiroJogador2) {
+    public Jogadores(String nomeJogador1, int pontuacaoTotalJogador1, String nomeJogador2, int pontuacaoTotalJogador2) {
         this.nomeJogador1 = nomeJogador1;
-        this.numeroInteiroJogador1 = numeroInteiroJogador1;
+        this.pontuacaoTotalJogador1 = pontuacaoTotalJogador1;
         this.nomeJogador2 = nomeJogador2;
-        this.numeroInteiroJogador2 = numeroInteiroJogador2;
+        this.pontuacaoTotalJogador2 = pontuacaoTotalJogador2;
     }
 
     public Jogadores(){
         this.nomeJogador1 = "";
-        this.numeroInteiroJogador1 = 0;
+        this.pontuacaoTotalJogador1 = 0;
         this.nomeJogador2 = "";
-        this.numeroInteiroJogador2 = 0;
+        this.pontuacaoTotalJogador2 = 0;
     }
 
-    public void entradaDicionarioJogador1(int categoriaEscolhida, ArrayList<Integer> dados){
-        dicionarioJogador1.put(categoriaEscolhida,dados);
+    public void entradaCategoriaEscolhidaJogador1(int categoriaEscolhida, ArrayList<Integer> dados){
+        categoriaEscolhidaJogador1.put(categoriaEscolhida,dados);
     }
-    public void entradaDicionarioJogador2(int categoriaEscolhida, ArrayList<Integer> dados){
-        dicionarioJogador2.put(categoriaEscolhida,dados);
+    public void entradaCategoriaEscolhidaJogador2(int categoriaEscolhida, ArrayList<Integer> dados){
+        categoriaEscolhidaJogador2.put(categoriaEscolhida,dados);
     }
 
     public String getNomeJogador1() {
@@ -43,12 +43,12 @@ public class Jogadores {
         return this.nomeJogador2;
     }
 
-    public int getNumeroInteiroJogador1() {
-        return this.numeroInteiroJogador1;
+    public int getPontuacaoTotalJogador1() {
+        return this.pontuacaoTotalJogador1;
     }
 
-    public int getNumeroInteiroJogador2() {
-        return this.numeroInteiroJogador2;
+    public int getPontuacaoTotalJogador2() {
+        return this.pontuacaoTotalJogador2;
     }
 
     public void setNomeJogador1(String nomeJogador1) {
@@ -59,20 +59,20 @@ public class Jogadores {
         this.nomeJogador2 = nomeJogador2;
     }
 
-    public void setNumeroInteiroJogador1(int numeroInteiroJogador1) {
-        this.numeroInteiroJogador1 += numeroInteiroJogador1;
+    public void setPontuacaoTotalJogador1(int pontuacaoTotalJogador1) {
+        this.pontuacaoTotalJogador1 += pontuacaoTotalJogador1;
     }
 
-    public void setNumeroInteiroJogador2(int numeroInteiroJogador2) {
-        this.numeroInteiroJogador2 += numeroInteiroJogador2;
+    public void setPontuacaoTotalJogador2(int pontuacaoTotalJogador2) {
+        this.pontuacaoTotalJogador2 += pontuacaoTotalJogador2;
     }
 
-    public Dictionary<Integer, ArrayList> getDicionarioJogador1() {
-        return dicionarioJogador1;
+    public Dictionary<Integer, ArrayList> getCategoriaEscolhidaJogador1() {
+        return categoriaEscolhidaJogador1;
     }
 
-    public Dictionary<Integer, ArrayList> getDicionarioJogador2() {
-        return dicionarioJogador2;
+    public Dictionary<Integer, ArrayList> getCategoriaEscolhidaJogador2() {
+        return categoriaEscolhidaJogador2;
     }
 
 
@@ -88,22 +88,22 @@ public class Jogadores {
 
     public void carregarDicionarioDoArquivoJogador1() {
         ArquivoTxt arquivo = new ArquivoTxt();
-        arquivo.lerTxtJogador1(getNomeJogador1(),getNumeroInteiroJogador1(),getDicionarioJogador1());
+        arquivo.lerTxtJogador1(getNomeJogador1(),getPontuacaoTotalJogador1(),getCategoriaEscolhidaJogador1());
     }
 
     public void salvarDicionarioNoArquivoJogador1() {
         ArquivoTxt arquivo = new ArquivoTxt();
-        arquivo.escreverTxtJogador1(getNomeJogador1(), getNumeroInteiroJogador1(),getDicionarioJogador1());
+        arquivo.escreverTxtJogador1(getNomeJogador1(), getPontuacaoTotalJogador1(),getCategoriaEscolhidaJogador1());
     }
 
     public void carregarDicionarioDoArquivoJogador2() {
         ArquivoTxt arquivo = new ArquivoTxt();
-        //entradaDicionarioJogador2(arquivo.lerTxtJogador2());
-        arquivo.lerTxtJogador2(getNomeJogador2(), getNumeroInteiroJogador2(),getDicionarioJogador2());
+        //entradaCategoriaEscolhidaJogador2(arquivo.lerTxtJogador2());
+        arquivo.lerTxtJogador2(getNomeJogador2(), getPontuacaoTotalJogador2(),getCategoriaEscolhidaJogador2());
     }
 
     public void salvarDicionarioNoArquivoJogador2() {
         ArquivoTxt arquivo = new ArquivoTxt();
-        arquivo.escreverTxtJogador2(getNomeJogador2(), getNumeroInteiroJogador2(), getDicionarioJogador2());
+        arquivo.escreverTxtJogador2(getNomeJogador2(), getPontuacaoTotalJogador2(), getCategoriaEscolhidaJogador2());
     }
 }
