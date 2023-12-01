@@ -87,7 +87,7 @@ public class Principal {
                         pontuacao.setPontuacaoRodada(categoria.pontosObtidos(categoria.getCategoriaEscolhida(), rolarDado.getDados()));
                         System.out.println("Pontuacao na rodada: " + pontuacao.getPontuacaoRodada());
                         //faz a soma dapontuação da rodada com a posição total
-                        jogadores.setNumeroInteiroJogador1(pontuacao.getPontuacaoTotal());
+                        jogadores.setNumeroInteiroJogador1(pontuacao.getPontuacaoRodada());
                         //jogadores.entradaDicionarioJogador1(categoria.getCategoriaEscolhida(), rolarDado.getDados());
 
                     } else {
@@ -104,7 +104,7 @@ public class Principal {
                         pontuacao.setPontuacaoRodada(categoria.pontosObtidos(categoria.getCategoriaEscolhida(), rolarDado.getDados()));
                         System.out.println("Pontuacao na rodada: " + pontuacao.getPontuacaoRodada());
                         //faz a soma dapontuação da rodada com a posição total
-                        jogadores.setNumeroInteiroJogador2(pontuacao.getPontuacaoTotal());
+                        jogadores.setNumeroInteiroJogador2(pontuacao.getPontuacaoRodada());
 
                     } else {
                         System.out.println("Categoria já escolhida, escolha novamente");
