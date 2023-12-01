@@ -1,8 +1,6 @@
 package jogoyahtzee;
 
 import java.util.ArrayList;
-import java.util.Dictionary;
-import java.util.Hashtable;
 
 public class Jogadores {
     private String nomeJogadorRodada;
@@ -73,8 +71,7 @@ public class Jogadores {
     public ArrayList<Integer> getCategoriaEscolhidaJogador2() {
         return categoriaEscolhidaJogador2;
     }
-
-
+    
     public String getNomeJogadorRodada() {
         return nomeJogadorRodada;
     }
@@ -82,25 +79,23 @@ public class Jogadores {
     public void setNomeJogadorRodada(String nomeJogadorRodada) {
         this.nomeJogadorRodada = nomeJogadorRodada;
     }
-
-
-
-    public void carregarDicionarioDoArquivoJogador1() {
+    
+    public void carregarListaDoArquivo1() {
         ArquivoTxt arquivo = new ArquivoTxt();
-        arquivo.lerTxtJogador1(getNomeJogador1(),getPontuacaoTotalJogador1(),getCategoriaEscolhidaJogador1());
+        arquivo.lerTxtJogador1(getNomeJogador1());
     }
 
-    public void salvarDicionarioNoArquivoJogador1() {
+    public void salvarListaDoArquivo1() {
         ArquivoTxt arquivo = new ArquivoTxt();
         arquivo.escreverTxtJogador1(getNomeJogador1(), getPontuacaoTotalJogador1(),getCategoriaEscolhidaJogador1());
     }
 
-    public void carregarDicionarioDoArquivoJogador2() {
+    public void carregarListaDoArquivo2() {
         ArquivoTxt arquivo = new ArquivoTxt();
-        arquivo.lerTxtJogador2(getNomeJogador2(), getPontuacaoTotalJogador2(),getCategoriaEscolhidaJogador2());
+        arquivo.lerTxtJogador2(getNomeJogador2());
     }
 
-    public void salvarDicionarioNoArquivoJogador2() {
+    public void salvarListaDoArquivo2() {
         ArquivoTxt arquivo = new ArquivoTxt();
         arquivo.escreverTxtJogador2(getNomeJogador2(), getPontuacaoTotalJogador2(), getCategoriaEscolhidaJogador2());
     }

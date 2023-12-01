@@ -26,10 +26,10 @@ public class Principal {
             //inicio, limpa a lista dados, para iniciar um novo jogo
             rolarDado.getDados().clear();
             if(jogadores.getNomeJogadorRodada() == jogadores.getNomeJogador1()){
-                jogadores.carregarDicionarioDoArquivoJogador1();
+                jogadores.carregarListaDoArquivo1();
             }
             if(jogadores.getNomeJogadorRodada() == jogadores.getNomeJogador2()){
-                jogadores.carregarDicionarioDoArquivoJogador2();
+                jogadores.carregarListaDoArquivo2();
             }
 
             //informa a rodada e da a instrução para iniciar
@@ -64,12 +64,7 @@ public class Principal {
             }
 
             //informa as categorias do jogo e mostra de novo os dados rolados
-            if(jogadores.getNomeJogadorRodada() == jogadores.getNomeJogador1()){
-                jogadores.entradaCategoriaEscolhidaJogador1(categoria.getCategoriaEscolhida());
-            }
-            if(jogadores.getNomeJogadorRodada() == jogadores.getNomeJogador2()){
-                jogadores.entradaCategoriaEscolhidaJogador2(categoria.getCategoriaEscolhida());
-            }
+
             categoria.menuDeCategorias();
             System.out.println("\nDados: " + rolarDado.getDados() + "\n");
             //pede que escolha uma categoria
@@ -91,8 +86,7 @@ public class Principal {
                     } else {
                         System.out.println("Categoria já escolhida, escolha novamente");
                     }
-                    jogadores.entradaCategoriaEscolhidaJogador1(categoria.getCategoriaEscolhida());
-                    jogadores.salvarDicionarioNoArquivoJogador1();
+                    jogadores.salvarListaDoArquivo1();
                 }
                 if(jogadores.getNomeJogadorRodada() == jogadores.getNomeJogador2()){
                     boolean verifica = categoria.contemCategoriaJogador2(categoria.getCategoriaEscolhida());
@@ -107,7 +101,7 @@ public class Principal {
                     } else {
                         System.out.println("Categoria já escolhida, escolha novamente");
                     }
-                    jogadores.salvarDicionarioNoArquivoJogador2();
+                    jogadores.salvarListaDoArquivo2();
                 }
             }
 
@@ -115,6 +109,8 @@ public class Principal {
         }
 
         //ao fim do jogo a pontuação total é mostrada
+        System.out.println("----Fim de jogo----");
+        System.out.println();
         System.out.println("Jogador: " + jogadores.getNomeJogador1());
         System.out.println("Pontuação total: " + jogadores.getPontuacaoTotalJogador1());
         System.out.println();

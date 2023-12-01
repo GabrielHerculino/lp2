@@ -26,9 +26,9 @@ public class ArquivoTxt {
     }
 
     // Lê as informações de um arquivo
-    public void lerTxtJogador1(String nomeJogador1, int pontuacaoTotalJogador1, ArrayList<Integer> dicionarioJogador1) {
+    public void lerTxtJogador1(String nomeJogador1) {
         try {
-            File arquivo = new File(nomeJogador1+ ".txt");
+            File arquivo = new File(nomeJogador1 + ".txt");
             arquivo.createNewFile();
             Scanner scanner = new Scanner(arquivo);
 
@@ -63,7 +63,7 @@ public class ArquivoTxt {
 
 
     // Lê as informações de um arquivo
-    public void lerTxtJogador2(String nomeJogador2, int pontuacaoTotalJogador2, ArrayList<Integer> dicionarioJogador2) {
+    public void lerTxtJogador2(String nomeJogador2) {
         try {
             File arquivo = new File(nomeJogador2+ ".txt");
             arquivo.createNewFile();
