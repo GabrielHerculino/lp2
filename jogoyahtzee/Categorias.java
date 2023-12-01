@@ -55,7 +55,7 @@ public class Categorias{
                 Set<Integer> uniqueValues = new HashSet<>(dados);
                 for (int value : uniqueValues) {
                     if (dados.stream().filter(d -> d == value).count() >= 3) {
-                        dados.stream().mapToInt(Integer::intValue).sum();
+                        return dados.stream().mapToInt(Integer::intValue).sum();
                     }
                 }
                 break;
@@ -63,7 +63,7 @@ public class Categorias{
                 Set<Integer> uniqueValues1 = new HashSet<>(dados);
                 for (int value : uniqueValues1) {
                     if (dados.stream().filter(d -> d == value).count() >= 4) {
-                        dados.stream().mapToInt(Integer::intValue).sum();
+                        return dados.stream().mapToInt(Integer::intValue).sum();
                     }
                 }
                 break;
